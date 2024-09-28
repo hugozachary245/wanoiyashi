@@ -1,0 +1,269 @@
+/* Site-wide fonts and colors */
+:root {
+    --background-color-dark: rgb(19, 12, 6);
+    --background-color-dark-gradient: rgba(19, 12, 6, 1);
+    --background-color-light: rgb(122,141,155);
+    --background-color-light-gradient: rgba(122,141,155,1);
+    --border-color: rgb(255, 185, 77);
+    --shadow-color: rgb(245, 217, 175);
+    --font-color-main: #fff;
+    --font-color-dark: #000;
+}
+
+body {
+    background: var(--background-color-light);
+    background: linear-gradient(0deg, var(--background-color-light-gradient) 0%, var(--background-color-dark-gradient) 100%);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--font-color-main);
+}
+
+
+h1 {
+    font-family: 'Bilbo', cursive;
+    font-size: 5em;
+    margin: 2em 1rem;
+    color: var(--font-color-dark);
+    text-shadow: 2px 2px 2px var(--shadow-color);
+}
+
+h2 {
+    border-bottom: 1px solid var(--border-color);
+    font-family: 'Bilbo', cursive;
+    font-size: 3em;
+    color: var(--font-color-dar);
+    text-shadow: 2px 2px 2px var(--font-color-dark);
+}
+
+p {
+    line-height: 1.6em;
+    color: #eee;
+}
+
+/* ---Sections--- */
+
+/* Main */
+main {
+    margin: 0 0 10vh;
+    min-height: 95vh;
+    padding-top: 3em;
+}
+
+#main-header {
+    padding: 20vh 0;
+    text-align: center;
+    background-image: url("../img/dawid-zawila-zb2vBaHYB2I-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section {
+    position: relative;
+    min-height: 95vh;
+}
+
+/* General Container */
+.container {
+    display: block;
+    position: relative;
+    padding: 1em;
+    text-align: left;
+    margin-left: 4em;
+    margin-right: 25vw;
+}
+
+section:nth-of-type(even) .container {
+    margin-left: 25vw;
+    margin-right: 4em;
+    text-align: right; 
+}
+
+
+
+/* Small Images */
+.img-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-sm {
+    height: 10.75rem;
+    opacity: .4;
+}
+
+/* Services */
+#services.active-section .img-sm {
+    opacity: 1;
+}
+
+
+/* About */
+#about::after {
+content: "";
+    background: url("../img/savs-0KHC0_X4GeU-unsplash2.jpg");
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    transition: ease .3s all;
+    background-size: cover;
+    background-position: 100% 100%;
+}
+
+/* About - Active State */
+#about.active-section::after {
+    opacity: .4;
+}
+
+/* Contact */
+#contact-form .contact-form-div {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact-form input, 
+#contact-form textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px #ddd solid;
+}
+
+#contact-form input:focus, 
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--border-color);
+}
+
+#contact-form textarea {
+    height: 200px;
+}
+
+/* Contact - Active State */
+#contact.active-section .img-sm {
+    opacity: 1;
+}
+
+
+
+.btn-submit {
+    font-size: 1rem;
+    padding: 15px;
+    color: var(--font-color-main);
+    background-color: rgb(137, 135, 135);
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-submit:hover {
+    background-color: #555;
+}
+
+
+
+/* Location */
+#location::after {
+    content: "";
+    background: url("../img/kirill-x_VOtnVJeGE-unsplash.jpg");
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    transition: ease .3s all;
+    background-size: cover;
+    background-position: 100% 100%;
+}
+
+
+/* Location - Active State */
+#location.active-section::after {
+    opacity: .5;
+}
+
+/* Header */
+.page__header {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+/* Footer */
+.page__footer {
+    background: #000;
+    padding: 2em;
+}
+
+.page__footer p{
+    color: var(--font-color-main);
+}
+
+
+/* Media Queries */
+@media (max-width: 1150px) {
+    .img-sm {
+        height: 8rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin-right: 4em;
+    }
+    section:nth-of-type(even) .container {
+        margin-left: 4em;
+    }
+}
+
+@media (max-width: 750px) {
+    .img-sm {
+        height: 10.75rem;
+    }
+    .img-sm:nth-of-type(3) {
+        display: none;
+    }
+    .container {
+        margin: 0 2em;
+    }
+    section:nth-of-type(even) .container {
+        margin: 0 2em;
+    }
+
+}
+
+@media (max-width: 640px) {
+    .img-sm:nth-of-type(2) {
+        display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        margin: 0 .75em;
+    }
+    section:nth-of-type(even) .container {
+        margin: 0 .75em;
+    }
+    h1 {
+        font-size: 3.5em;
+        margin: 2em 1rem;
+    
+    }
+    main {
+        padding-top: 20px;
+    }
+
+}

@@ -1,0 +1,69 @@
+/* Navigation */
+
+/* Nav Bar */
+.navbar__menu ul {
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.navbar__menu li {
+    display: inline-block;
+}
+
+.navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--font-color-dark);
+}
+
+.navbar__menu .menu__link:hover {
+    background: #333;
+    color: var(--font-color-main);
+    transition: ease 0.3s all;
+}
+
+/* Navbar Active */
+.navbar__menu li.li-active-state .menu__link {
+    background: #3f3f3f;
+    color: var(--font-color-main);
+    transition: ease 0.3s all;
+
+}
+
+/* Scroll to Top Button */
+#btn-top {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    padding: 14px 11px;
+    font-size: .9rem;
+    opacity: .8;
+    color: var(--font-color-main);
+    background-color: rgb(137, 135, 135);
+    cursor: pointer;
+    border-radius: 100%;
+    margin: 25px 0 0 15px;
+    text-decoration: none;
+}
+
+#btn-top:hover {
+    background-color: #555;
+    transition: ease 0.3s all;
+}
+
+@media (max-width: 600px) {
+    #btn-top {
+        bottom: 1rem;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .navbar__menu .menu__link {
+        font-size: .8rem;
+    }
+
+}
